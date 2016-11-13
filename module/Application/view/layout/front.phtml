@@ -1,0 +1,166 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Khe '. $this->translate('Survey'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        
+						//<!-- BEGIN PAGE LEVEL STYLE -->
+						->prependStylesheet($this->basePath('assetsfront/video/video-js.min.css'))
+						->prependStylesheet($this->basePath('assetsfront/plugins/revolution/revolution.css'))
+						
+						//<!-- END PAGE LEVEL STYLE -->
+						
+						//<!-- BEGIN MANDATORY STYLE -->
+						->prependStylesheet($this->basePath('assetsfront/css/animate.css'))
+						->prependStylesheet($this->basePath('assetsfront/css/style.css'))
+						->prependStylesheet($this->basePath('assetsfront/css/bootstrap.min.css'))
+						->prependStylesheet($this->basePath('assetsfront/plugins/owl-carousel/owl.carousel.css'))
+						->prependStylesheet($this->basePath('assetsfront/css/icons/flaticons/flaticon.css'))
+						->prependStylesheet($this->basePath('assetsfront/css/icons/fontawesome/font-awesome.css'))
+						//<!-- END  MANDATORY STYLE -->
+		?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+		
+			/*
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery.min.js'))
+            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+			*/
+			->prependFile($this->basePath('assetsfront/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js'))
+			
+       ; ?>
+
+    </head>
+    <body class="tour-page" id="animated-page">
+	
+	
+		<!-- BEGIN TOPBAR -->
+		<nav class="navbar navbar-fixed-top" role="navigation" data-0="line-height:85px; height:85px; background-color:rgba(43,46,51,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(43,46,51,1);">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="fa fa-bars c-white"></span>
+					</button>
+					<h1>
+						<a class="navbar-brand" href="index.html" data-0="line-height:80px" data-300="line-height:58px">
+							<img src="<?=$this->layout["SITE_URL"]?>/assetsfront/img/logo.png" data-0="line-height:80px" data-300="line-height:58px" alt="logo" width="90" height="29">
+						</a>
+					</h1>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:7px;">
+						<li ><a href="<?=$this->layout["SITE_URL"]?>">Home</a>
+						</li>
+						<li class="active" ><a href="<?=$this->layout["SITE_URL"]?>/menu/tour">Nosotros</a>
+						</li>
+						<li><a href="pricing.html">Pricing</a>
+						</li>
+						<li><a href="portfolio.html">Portfolio</a>
+						</li>
+						<li><a href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- END TOPBAR -->
+
+        
+            <?php echo $this->content; ?>
+            <hr>
+            
+				<!-- BEGIN SUBSCRIBE SECTION -->
+				<section id="subscribe" class="subscribe-form">
+					<div class="container">
+						<div class="row">
+							<form>
+								<div class="col-sm-8">
+									<input type="text" placeholder="Enter your e-mail" spellcheck="false">
+								</div>
+								<div class="col-sm-4">
+									<button class="btn btn-large btn-blue" type="submit">
+										Subscribe now
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+				<!-- END SUBSCRIBE SECTION -->
+				<!-- BEGIN FOOTER -->
+				<section id="footer" class="section footer">
+					<div class="container">
+						<div class="row animated opacity m-b-20" data-andown="fadeIn" data-animation="animation">
+							<div class="col-sm-12 align-center">
+								<ul class="social-network social-circle">
+									<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a>
+									</li>
+									<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+									</li>
+									<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+									</li>
+									<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
+									</li>
+									<li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row align-center copyright">
+							<div class="col-sm-12">
+								<p>Copyright &copy; 2014 goPro</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a> 
+				<!-- END FOOTER -->
+			
+			
+            
+        <?php echo $this->inlineScript() 
+		
+		->prependFile($this->basePath('assetsfront/js/main.js'))
+		
+		
+		//<!-- BEGIN PAGE PLUGIN SCRIPTS -->
+		
+		->prependFile($this->basePath('assetsfront/plugins/lazylinepainter/raphael-min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/lazylinepainter/jquery.lazylinepainter-1.4.1.min.js'))
+		
+	
+		->prependFile($this->basePath('assetsfront/video/video.js'))
+		->prependFile($this->basePath('assetsfront/plugins/onscroll-effect/js/cbpScroller.js'))
+		->prependFile($this->basePath('assetsfront/plugins/onscroll-effect/js/classie.js'))
+		->prependFile($this->basePath('assetsfront/plugins/background-video/jquery.backgroundvideo.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/revolution/jquery.revolution.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/revolution/plugins.min.js'))
+		//<!-- END PAGE PLUGIN SCRIPTS -->
+
+		
+		//<!-- BEGIN MANDATORY SCRIPTS -->
+		->prependFile($this->basePath('assetsfront/plugins/jquery-appear/jquery.appear.js'))
+		->prependFile($this->basePath('assetsfront/plugins/stellar/stellar.js'))
+		->prependFile($this->basePath('assetsfront/plugins/jquery-scrollto/jquery.scrollTo-1.4.3.1-min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/skrollr/skrollr.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/nicescroll/jquery.nicescroll.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/owl-carousel/owl.carousel.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/bootstrap.min.js'))
+		->prependFile($this->basePath('assetsfront/plugins/jquery-1.11.js'))
+		//<!-- END MANDATORY SCRIPTS -->
+		
+		?>
+    </body>
+</html>

@@ -1,9 +1,9 @@
 # Composer files
 composer.phar
-vendor/
+vendor/*
 
 # Local configs
-config/autoload/*.local.php
+config/*
 
 # Binary gettext files
 *.mo
@@ -23,3 +23,11 @@ data/DoctrineORMModule/cache/
 # Legacy ZF1
 demos/
 extras/documentation
+
+#public
+public/assets/*
+public/assetsfront/*
+public/fonts/*
+public/.htaccess
+public/index.php
+
