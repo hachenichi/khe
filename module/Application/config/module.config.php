@@ -85,6 +85,22 @@ return array(
 			),
 			/*Hasta aqui y configurar al gusto*/
 			
+
+             /*Para crear un Controller nuevo -> Copiar desde aqui*/
+            'Dashboard' => array(// <-- Nombre del controlador
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/dashboard[/:action]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*'
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Dashboard',
+                        'action'     => 'dashboard',
+                    ),
+                ),
+            ),
+            /*Hasta aqui y configurar al gusto*/
         ),
     ),
     'service_manager' => array(
@@ -126,7 +142,8 @@ return array(
         'invokables' => array(
             'Application\Controller\Index' => Controller\IndexController::class,
             'Application\Controller\Menu' => Controller\MenuController::class,
-            'Application\Controller\Login' => Controller\LoginController::class
+            'Application\Controller\Login' => Controller\LoginController::class,
+            'Application\Controller\Dashboard' => Controller\DashboardController::class
         ),
     ),
     'view_manager' => array(
