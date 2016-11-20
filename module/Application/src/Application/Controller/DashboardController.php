@@ -19,4 +19,10 @@ class DashboardController extends AbstractActionController
     	$this->layout('layout/dashboard');
         return new ViewModel();
     }
+    public function surveyAction()
+    {
+    	$this->layout('layout/dashboard');
+        return new ViewModel();
+    }
+    
 }
