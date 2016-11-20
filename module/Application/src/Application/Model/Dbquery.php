@@ -40,12 +40,13 @@ class Dbquery {
 	public function login($email, $pass) {
 		
 		$result = $this->db->query('SELECT
-									users_id
+									*
 									FROM users
 									WHERE users_email = ?
-									AND users_password = ?
+									AND users_pass = ?
 									AND users_status = 1',
-			array($email, md5($pass.$this->config['pass']['concat'])));
+			array($email, $pass));
+			//array($email, md5($pass.$this->config['pass']['concat'])));
 
 		$user = $result->toArray();
 		//Debug::dump($user);
