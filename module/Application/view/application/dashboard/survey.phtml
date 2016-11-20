@@ -1,0 +1,329 @@
+<!-- BEGIN MAIN CONTENT -->
+        <div id="main-content">
+            <div class="page-title"> <i class="icon-custom-left"></i>
+                <h3><strong>Beautiful</strong> Form Wizard</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Wizard</strong></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3><strong>Step</strong> Wizard</h3>
+                                    <p>Here is an example of a complete wizard form in modal window.</p>
+                                    <!-- BEGIN FORM WIZARD WITH VALIDATION -->
+                                    <form class="form-wizard" action="#">
+                                        <h1>Account</h1>
+                                        <section>
+                                            <h2 class="hidden">&nbsp;</h2>
+                                            <div class="form-group">
+                                                <label for="userName">User name *</label>
+                                                <input id="userName" name="userName" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password *</label>
+                                                <input id="password" name="password" type="password" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="confirm">Confirm Password *</label>
+                                                <input id="confirm" name="confirm" type="password" class="form-control required">
+                                            </div>
+                                            <select class="form-control" title="Select an account type...">
+                                                <option class="no-option">Select an account type...</option>
+                                                <option>Editor</option>
+                                                <option>Client</option>
+                                                <option>Writter</option>
+                                            </select>
+                                            <div class="form-group">
+                                                <label for="radio1">
+                                                    <input type="radio" name="radio1" id="radio1">I have read terms
+                                                </label>
+                                                <label for="radio2">
+                                                    <input type="radio" name="radio1" id="radio2" checked>I have read terms
+                                                </label>
+
+                                            </div>
+                                            <p>(*) Mandatory</p>
+                                        </section>
+                                        <h1>Profile</h1>
+                                        <section>
+                                            <h2 class="hidden">&nbsp;</h2>
+                                            <div class="form-group">
+                                                <label for="name">First name *</label>
+                                                <input id="name" name="name" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="surname">Last name *</label>
+                                                <input id="surname" name="surname" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email *</label>
+                                                <input id="email" name="email" type="text" class="form-control required email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address">Address</label>
+                                                <input id="address" name="address" type="text" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="age">Age (The warning step will show up if age is less than 18) *</label>
+                                                <input id="age" name="age" type="text" class="form-control required number">
+                                            </div>
+                                            <p>(*) Mandatory</p>
+                                        </section>
+                                        <h1>Warning</h1>
+                                        <section>
+                                            <h2 class="hidden">&nbsp;</h2>
+                                            <span>You are to young</span>
+                                            <p>Please go away ;-)</p>
+                                        </section>
+                                        <h1>Finish</h1>
+                                        <section>
+                                            <h2 class="hidden">&nbsp;</h2>
+                                            <span>Terms and Conditions</span>
+                                            <div class="pos-rel p-l-30">
+                                                <input id="acceptTerms" name="acceptTerms" type="checkbox" class="pos-rel p-l-30 required">
+                                                <label for="acceptTerms">I agree with the Terms and Conditions.</label>
+                                            </div>
+                                        </section>
+                                    </form>
+                                    <!-- END FORM WIZARD WITH VALIDATION -->
+                                </div>
+                                <div class="col-md-4">
+                                    <h3><strong>Modal</strong> Wizard Bootstrap</h3>
+                                    <p>Here is an example of a complete wizard form in modal window.</p>
+                                    <button id="open-wizard" class="btn btn-primary">Open wizard</button>
+                                    <!-- BEGIN MODAL FORM WIZARD WITH VALIDATION -->
+                                    <div class="wizard" id="satellite-wizard" data-title="Create Server">
+                                        <!-- Step 1 Name & FQDN -->
+                                        <div class="wizard-card" data-cardname="name">
+                                            <h3>Name &amp; FQDN</h3>
+                                            <div class="wizard-input-section">
+                                                <div class="form-group">
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-control" id="label" name="label" placeholder="Server label" data-validate="validateServerLabel">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    Full Qualified Domain Name
+                                                </p>
+                                                <div class="form-group">
+                                                    <div class="col-sm-8">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="fqdn" name="fqdn" placeholder="FQDN" data-validate="validateFQDN" data-is-valid="0" data-lookup="0" />
+                                                            <span class="input-group-btn" id="btn-fqdn">
+                                                                <button class="btn btn-default" type="button" onclick='lookup();'>
+                                                                  Lookup
+                                                                </button> 
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    Server ip.
+                                                </p>
+                                                <div class="form-group">
+                                                    <div class="col-sm-8">
+                                                        <input type="text" class="form-control" id="ip" name="ip" placeholder="IP" data-serialize="1" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wizard-card" data-cardname="group">
+                                            <h3>Server Group</h3>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    Where would you like server <strong class="create-server-name"></strong>
+                                                    to go?
+                                                </p>
+                                                <img class="wizard-group-list" src="assets/plugins/wizard/groups.png" alt="wizard"/>
+                                            </div>
+                                        </div>
+                                        <div class="wizard-card wizard-card-overlay" data-cardname="services">
+                                            <h3>Service Selection</h3>
+                                            <div class="alert hide">
+                                                It's recommended that you select at least one service, like ping.
+                                            </div>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    Please choose the services you'd like Panopta to monitor. Any service you select will be given a default check frequency of 1 minute.
+                                                </p>
+                                                <select name="services" data-placeholder="Service List" style="width:350px;" class="chzn-select create-server-service-list form-control" multiple>
+                                                    <option>&nbsp;</option>
+                                                    <optgroup label="Basic">
+                                                        <option selected value="icmp.ping">Ping</option>
+                                                        <option selected value="tcp.ssh">SSH</option>
+                                                        <option value="tcp.ftp">FTP</option>
+                                                    </optgroup>
+                                                    <optgroup label="Web">
+                                                        <option selected value="tcp.http">HTTP</option>
+                                                        <option value="tcp.https">HTTP (Secure)</option>
+                                                        <option value="tcp.dns">DNS</option>
+                                                    </optgroup>
+                                                    <optgroup label="Email">
+                                                        <option value="tcp.pop">POP</option>
+                                                        <option value="tcp.imap">IMAP</option>
+                                                        <option value="tcp.smtp">SMTP</option>
+                                                        <option value="tcp.pops">POP (Secure)</option>
+                                                        <option value="tcp.imaps">IMAP (Secure)</option>
+                                                        <option value="tcp.smtps">SMTP (Secure)</option>
+                                                        <option value="tcp.http.exchange">Microsoft Exchange</option>
+                                                    </optgroup>
+                                                    <optgroup label="Databases">
+                                                        <option value="tcp.mysql">MySQL</option>
+                                                        <option value="tcp.postgres">PostgreSQL</option>
+                                                        <option value="tcp.mssql">Microsoft SQL Server</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="wizard-card wizard-card-overlay" data-cardname="location">
+                                            <h3>Monitoring Location</h3>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    We determined <strong>Chicago</strong> to be the closest location to monitor
+                                                    <strong class="create-server-name"></strong>
+                                                    If you would like to change this, or you think this is incorrect, please select a different monitoring location.
+                                                </p>
+                                                <select name="location" data-placeholder="Monitor nodes" style="width:350px;" class="chzn-select form-control">
+                                                    <option value="">&nbsp;</option>
+                                                    <optgroup label="North America">
+                                                        <option>Atlanta</option>
+                                                        <option selected>Chicago</option>
+                                                        <option>Dallas</option>
+                                                        <option>Denver</option>
+                                                        <option>Fremont, CA</option>
+                                                        <option>Los Angeles</option>
+                                                        <option>Miami</option>
+                                                        <option>Newark, NJ</option>
+                                                        <option>Phoenix</option>
+                                                        <option>Seattle</option>
+                                                        <option>Washington, DC</option>
+                                                    </optgroup>
+                                                    <optgroup label="Europe">
+                                                        <option>Amsterdam, NL</option>
+                                                        <option>Berlin</option>
+                                                        <option>London</option>
+                                                        <option>Milan, Italy</option>
+                                                        <option>Nurnberg, Germany</option>
+                                                        <option>Paris</option>
+                                                        <option>Stockholm</option>
+                                                        <option>Vienna</option>
+                                                    </optgroup>
+                                                    <optgroup label="Asia/Africa">
+                                                        <option>Cairo</option>
+                                                        <option>Jakarta</option>
+                                                        <option>Johannesburg</option>
+                                                        <option>Hong Kong</option>
+                                                        <option>Singapore</option>
+                                                        <option>Sydney</option>
+                                                        <option>Tokyo</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="wizard-card wizard-card-overlay">
+                                            <h3>Notification Schedule</h3>
+                                            <div class="wizard-input-section">
+                                                <p>
+                                                    Select the notification schedule to be used for outages.
+                                                </p>
+                                                <select name="notification" class="wizard-ns-select chzn-select form-control" data-placeholder="Notification schedule" style="width:350px;">
+                                                    <option value="">&nbsp;</option>
+                                                    <option>ALIS Production</option>
+                                                    <option>ALIS Development &amp; Staging</option>
+                                                    <option>Panopta Development &amp; Staging</option>
+                                                    <option>Jira</option>
+                                                    <option>QSC Enterprise Production</option>
+                                                    <option>QSC Enterprise Development &amp; Staging</option>
+                                                    <option>Panopta Production</option>
+                                                    <option>Panopta Monitoring Nodes</option>
+                                                    <option>Common</option>
+                                                </select>
+                                            </div>
+                                            <div class="wizard-ns-detail hide">
+                                                Also using <strong>ALIS Production</strong>:
+                                                <ul id="wizard-ns-detail-servers">
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/folder.png" alt="folder"/>Corporate sites</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/folder.png"  alt="folder"/>dt01.sat.medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>alisonline.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>circa-db04.sat.medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>circa-services01.sat.medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="folserver newder"/>circa-web01.sat.medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>heartbeat.alisonline.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>dt02.fre.medtelligent.com</li>
+                                                    <li>
+                                                        <img src="assets/plugins/wizard/server_new.png" alt="server new"/>dev03.lin.medtelligent.com</li>
+                                                </ul>img</div>
+                                        </div>
+                                        <div class="wizard-card">
+                                            <h3>Agent Setup</h3>
+                                            <div class="wizard-input-section">
+                                                <p>The <a target="_blank" href="http://www.panopta.com/support/knowledgebase/support-questions/how-do-i-install-the-panopta-monitoring-agent/">Panopta Agent</a> allows you to monitor local resources (disk usage,
+                                                    cpu usage, etc). If you would like to set that up now, please download and follow the <a target="_blank" href="http://www.panopta.com/support/knowledgebase/support-questions/how-do-i-install-the-panopta-monitoring-agent/">install instructions.</a>
+                                                </p>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Download<span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">.rpm</a>
+                                                        </li>
+                                                        <li><a href="#">.deb</a>
+                                                        </li>
+                                                        <li><a href="#">.tar.gz</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="wizard-input-section">
+                                                <p>You will be given a server key after you install the Agent on <strong class="create-server-name"></strong>. If you know your server key now, please enter it below.
+                                                </p>
+                                                <div class="form-group">
+                                                    <input type="text" class="create-server-agent-key form-control" placeholder="Server key (optional)" data-validate="">
+                                                </div>
+                                            </div>
+                                            <div class="wizard-error">
+                                                <div class="alert alert-error">
+                                                    <strong>There was a problem</strong> with your submission. Please correct the errors and re-submit.
+                                                </div>
+                                            </div>
+                                            <div class="wizard-failure">
+                                                <div class="alert alert-error">
+                                                    <strong>There was a problem</strong> submitting the form. Please try again in a minute.
+                                                </div>
+                                            </div>
+                                            <div class="wizard-success">
+                                                <div class="alert alert-success">
+                                                    <span class="create-server-name"></span>Server Created <strong>Successfully.</strong>
+                                                </div>
+                                                <a class="btn btn-default create-another-server">Create another server</a>
+                                                <span style="padding:0 10px">or</span>
+                                                <a class="btn btn-success im-done">Done</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END MODAL FORM WIZARD WITH VALIDATION -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
