@@ -101,6 +101,22 @@ return array(
                 ),
             ),
             /*Hasta aqui y configurar al gusto*/
+            
+            /*Para crear un Controller nuevo -> Copiar desde aqui*/
+            'Registry' => array(// <-- Nombre del controlador
+                'type'    => 'segment',
+                'options' => array(
+                    'route'    => '/registry[/:action]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*'
+                    ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Registry',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            /*Hasta aqui y configurar al gusto*/
         ),
     ),
     'service_manager' => array(
@@ -143,7 +159,8 @@ return array(
             'Application\Controller\Index' => Controller\IndexController::class,
             'Application\Controller\Menu' => Controller\MenuController::class,
             'Application\Controller\Login' => Controller\LoginController::class,
-            'Application\Controller\Dashboard' => Controller\DashboardController::class
+            'Application\Controller\Dashboard' => Controller\DashboardController::class,
+            'Application\Controller\Registry' => Controller\RegistryController::class
         ),
     ),
     'view_manager' => array(
