@@ -1,0 +1,47 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Khe '. $this->translate('Registro'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+                        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+        
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath('assets/css/animate-custom.css'))
+                        ->prependStylesheet($this->basePath('assets/css/style.css'))
+                        ->prependStylesheet($this->basePath('assets/plugins/bootstrap-loading/lada.min.css'))
+			->prependStylesheet($this->basePath('assets/css/plugins.min.css'))
+			->prependStylesheet($this->basePath('assets/css/bootstrap.min.css'))
+			->prependStylesheet($this->basePath('assets/css/icons/icons.min.css'))
+        ?>
+        
+        <?php echo $this->headScript()
+			->prependFile($this->basePath('assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js')); 
+        ?>
+    </head>
+    <body  class="login fade-in" data-page="login">
+        <div class="container" id="login-block">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+                    <div class="login-box clearfix animated flipInY">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <?php echo $this->inlineScript() 
+                        ->prependFile($this->basePath('assets/js/account.js'))
+                        ->prependFile($this->basePath('assets/plugins/bootstrap-loading/lada.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/backstretch/backstretch.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery.cookie.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/bootstrap/bootstrap.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-mobile/jquery.mobile-1.4.2.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-ui/jquery-ui-1.11.2.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-migrate-1.2.1.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-1.11.1.min.js'))
+        ?>
+    </body>
+</html>
