@@ -16,7 +16,12 @@ class RegistryController extends AbstractActionController
 {
     public function indexAction()
     {
-        $this->layout('layout/layout_sign');		
+        $this->layout('layout/login');
+        
+        
+        if($this->getRequest()->isPost()){
+            
+        }
         return new ViewModel();
     }
 }

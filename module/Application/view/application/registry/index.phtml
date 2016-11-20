@@ -1,0 +1,45 @@
+<div class="container" id="login-block">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+            <div class="login-box clearfix animated flipInY">
+                <div class="page-icon animated bounceInDown">
+                    <img src="<?=$this->layout()->layout["SITE_URL"]?>/assets/img/account/register-icon.png" alt="Register icon" />
+                </div>
+                
+                <div class="login-logo">
+                    <a href="#">
+                        <img src="<?=$this->layout()->layout["SITE_URL"]?>/assets/img/account/login-logo.png" alt="Company Logo" />
+                    </a>
+                </div>
+                
+                <hr>
+                
+                <div class="login-form">
+                    <!-- Start Error box -->
+                    <div class="alert alert-danger hide">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h4>Error!</h4>
+                        Your Error Message goes here
+                    </div>
+                    <!-- End Error box -->
+                    
+                    <form action="<?=$this->layout()->layout["SITE_URL"]?>/registry" method="post">
+                        <input type="text" placeholder="Name" class="input-field" required/>
+                        <input type="email" placeholder="E-mail" class="input-field" required/>
+                        <input type="password" placeholder="Password" class="input-field" required/>
+                        <input type="password" placeholder="Confirm Password" class="input-field" required/>
+                        <button id="submit-form" class="btn btn-login ladda-button" data-style="expand-left">
+                            <span class="ladda-label">Sign Up</span>
+                        </button>
+                    </form>
+                    
+                    <div class="login-links">
+                        <a href="">Forgot password?</a>
+                        <br>
+                        <a href="<?=$this->layout()->layout["SITE_URL"]?>/login">Already have an account? <strong>Sign In</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
