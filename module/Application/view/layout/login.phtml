@@ -24,10 +24,6 @@
 						->prependStylesheet($this->basePath('assets/css/bootstrap.min.css'))
 						->prependStylesheet($this->basePath('assets/css/icons/icons.min.css'))
 						
-						
-						
-						
-						
 						//<!-- END  MANDATORY STYLE -->
 		?>
 
@@ -47,87 +43,30 @@
     </head>
     <body class="login fade-in" data-page="login">
 
-	<!-- BEGIN LOGIN BOX -->
-    <div class="container" id="login-block">
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
-                <div class="login-box clearfix animated flipInY">
-                    <div class="page-icon animated bounceInDown">
-                        <img src="assets/img/account/user-icon.png" alt="Key icon">
-                    </div>
-                    <div class="login-logo">
-                        <a href="#?login-theme-3">
-                            <img src="assets/img/account/login-logo.png" alt="Company Logo">
-                        </a>
-                    </div>
-                    <hr>
-                    <div class="login-form">
-                        <!-- BEGIN ERROR BOX -->
-                        <div class="alert alert-danger hide">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            <h4>Error!</h4>
-                            Your Error Message goes here
-                        </div>
-                        <!-- END ERROR BOX -->
-                        <form action="#" method="post">
-                            <input type="text" placeholder="Username" class="input-field form-control user" />
-                            <input type="password" placeholder="Password" class="input-field form-control password" />
-                            <div class="div-login" style="margin:auto;text-align:center">
-                                <button style="display: inline;" id="submit-form" class="btn btn-login ladda-button" data-style="expand-left"><span class="ladda-label">login</span></button>
-                            </div> 
-                        </form>
-                        <div class="login-links">
-                            <a href="password_forgot.html">Forgot password?</a>
-                            <br>
-                            <a href="signup.html">Don't have an account? <strong>Sign Up</strong></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-login row">
-                    <div class="fb-login col-lg-6 col-md-12 animated flipInX">
-                        <a href="#" class="btn btn-facebook btn-block">Connect with <strong>Facebook</strong></a>
-                    </div>
-                    <div class="twit-login col-lg-6 col-md-12 animated flipInX">
-                        <a href="#" class="btn btn-twitter btn-block">Connect with <strong>Twitter</strong></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END LOCKSCREEN BOX -->
-
-        
             <?php echo $this->content; ?>
-            <hr>
-            
-			
+
 				<!-- BEGIN FOOTER -->
 				<section id="footer" class="section footer">
 					<div class="container">
 						<div class="row animated opacity m-b-20" data-andown="fadeIn" data-animation="animation">
 							<div class="col-sm-12 align-center">
 								<ul class="social-network social-circle">
-									<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a>
-									</li>
-									<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
-									</li>
-									<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
-									</li>
-									<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
-									</li>
-									<li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-									</li>
+									<a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a>
+									<a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+									<a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+									<a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
+									<a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
 								</ul>
 							</div>
 						</div>
 						<div class="row align-center copyright">
 							<div class="col-sm-12">
-								<p>Copyright &copy; 2014 goPro</p>
+								<p><?=$this->layout["COPY_RIGHT"]?></p>
 							</div>
 						</div>
 					</div>
 				</section>
-				<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a> 
+				
 				<!-- END FOOTER -->
 			
 			
@@ -135,13 +74,11 @@
         <?php echo $this->inlineScript() 
 		
 		//<!-- BEGIN PAGE LEVEL SCRIPTS -->
-		
 		->prependFile($this->basePath('assets/js/account.js'))
 		->prependFile($this->basePath('assets/plugins/bootstrap-loading/lada.min.js'))
 		->prependFile($this->basePath('assets/plugins/backstretch/backstretch.min.js'))
 		//<!-- END PAGE LEVEL SCRIPTS -->
 
-		
 		//<!-- BEGIN MANDATORY SCRIPTS -->
 		->prependFile($this->basePath('assets/plugins/jquery.cookie.min.js'))
 		->prependFile($this->basePath('assets/plugins/bootstrap/bootstrap.min.js'))
