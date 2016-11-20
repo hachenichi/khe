@@ -4,90 +4,66 @@
     <head>
         <meta charset="utf-8">
         <?php echo $this->headTitle('Khe '. $this->translate('Survey'))->setSeparator(' - ')->setAutoEscape(false) ?>
-
         <?php echo $this->headMeta()
-            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
-            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+                        ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                        ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
         ?>
 
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
-                        
-						//<!-- BEGIN PAGE LEVEL STYLE -->
-						->prependStylesheet($this->basePath('assets/css/animate-custom.css'))
-						//<!-- END PAGE LEVEL STYLE -->
-						
-						//<!-- BEGIN MANDATORY STYLE -->
-						->prependStylesheet($this->basePath('assets/css/style.css'))
-						->prependStylesheet($this->basePath('assets/plugins/bootstrap-loading/lada.min.css'))
-						->prependStylesheet($this->basePath('assets/css/plugins.min.css'))
-						->prependStylesheet($this->basePath('assets/css/bootstrap.min.css'))
-						->prependStylesheet($this->basePath('assets/css/icons/icons.min.css'))
-						
-						//<!-- END  MANDATORY STYLE -->
-		?>
-
-        <!-- Scripts -->
+                        ->prependStylesheet($this->basePath('assets/css/animate-custom.css'))
+                        ->prependStylesheet($this->basePath('assets/css/style.css'))
+                        ->prependStylesheet($this->basePath('assets/plugins/bootstrap-loading/lada.min.css'))
+			->prependStylesheet($this->basePath('assets/css/plugins.min.css'))
+			->prependStylesheet($this->basePath('assets/css/bootstrap.min.css'))
+                        ->prependStylesheet($this->basePath('assets/css/icons/icons.min.css'))
+        ?>
+        
         <?php echo $this->headScript()
-		
-			/*
-            ->prependFile($this->basePath('js/bootstrap.min.js'))
-            ->prependFile($this->basePath('js/jquery.min.js'))
-            ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
-            ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
-			*/
-			->prependFile($this->basePath('assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js'))
-			
-       ; ?>
+                        ->prependFile($this->basePath('assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js')); 
+        ?>
 
     </head>
     <body class="login fade-in" data-page="login">
-
-            <?php echo $this->content; ?>
-
-				<!-- BEGIN FOOTER -->
-				<section id="footer" class="section footer">
-					<div class="container">
-						<div class="row animated opacity m-b-20" data-andown="fadeIn" data-animation="animation">
-							<div class="col-sm-12 align-center">
-								<ul class="social-network social-circle">
-									<a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a>
-									<a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
-									<a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
-									<a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
-									<a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-								</ul>
-							</div>
-						</div>
-						<div class="row align-center copyright">
-							<div class="col-sm-12">
-								<p><?=$this->layout["COPY_RIGHT"]?></p>
-							</div>
-						</div>
-					</div>
-				</section>
-				
-				<!-- END FOOTER -->
-			
-			
-            
+        <?php echo $this->content; ?>
+        
+        <section id="footer" class="section footer">
+            <div class="container">
+                <div class="row animated opacity m-b-20" data-andown="fadeIn" data-animation="animation">
+                    <div class="col-sm-12 align-center">
+                        <ul class="social-network social-circle">
+                            <a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a>
+                            <a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="row align-center copyright">
+                    <div class="col-sm-12">
+                        <p><?=$this->layout["COPY_RIGHT"]?></p>
+                    </div>
+                </div>
+            </div>
+        </section>				
+	<!-- END FOOTER -->
+        
         <?php echo $this->inlineScript() 
-		
-		//<!-- BEGIN PAGE LEVEL SCRIPTS -->
-		->prependFile($this->basePath('assets/js/account.js'))
-		->prependFile($this->basePath('assets/plugins/bootstrap-loading/lada.min.js'))
-		->prependFile($this->basePath('assets/plugins/backstretch/backstretch.min.js'))
-		//<!-- END PAGE LEVEL SCRIPTS -->
+                        ->prependFile($this->basePath('assets/js/account.js'))
+                        ->prependFile($this->basePath('assets/plugins/bootstrap-loading/lada.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/backstretch/backstretch.min.js'))
+                        //<!-- END PAGE LEVEL SCRIPTS -->
 
-		//<!-- BEGIN MANDATORY SCRIPTS -->
-		->prependFile($this->basePath('assets/plugins/jquery.cookie.min.js'))
-		->prependFile($this->basePath('assets/plugins/bootstrap/bootstrap.min.js'))
-		->prependFile($this->basePath('assets/plugins/jquery-mobile/jquery.mobile-1.4.2.js'))
-		->prependFile($this->basePath('assets/plugins/jquery-ui/jquery-ui-1.11.2.min.js'))
-		->prependFile($this->basePath('assets/plugins/jquery-migrate-1.2.1.min.js'))
-		->prependFile($this->basePath('assets/plugins/jquery-1.11.1.min.js'))
-		//<!-- END MANDATORY SCRIPTS -->
-		
-		?>
+                        //<!-- BEGIN MANDATORY SCRIPTS -->
+                        ->prependFile($this->basePath('assets/plugins/jquery.cookie.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/bootstrap/bootstrap.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-mobile/jquery.mobile-1.4.2.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-ui/jquery-ui-1.11.2.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-migrate-1.2.1.min.js'))
+                        ->prependFile($this->basePath('assets/plugins/jquery-1.11.1.min.js'))
+                        //<!-- END MANDATORY SCRIPTS -->
+        ?>
     </body>
 </html>
