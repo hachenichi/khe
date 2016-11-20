@@ -27,16 +27,16 @@
 
         <!-- Scripts -->
         <?php echo $this->headScript()
-            /*
+            
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery.min.js'))
             ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
-            */
+            
             ->prependFile($this->basePath('assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js'))
 
         ; ?>
-
+        <?php echo '<link href="#" rel="stylesheet" id="theme-color">'; ?>
     </head>
     
 <body data-page="dashboard">
@@ -854,7 +854,7 @@
                         ->prependFile($this->basePath('assets/plugins/charts-flot/jquery.flot.animator.min.js'))
                         ->prependFile($this->basePath('assets/plugins/charts-flot/jquery.flot.js'))
                         ->prependFile($this->basePath('assets/plugins/google-maps/gmaps.js'))
-                        ->prependFile($this->basePath('http://maps.google.com/maps/api/js?sensor=true'))
+                        ->prependFile('http://maps.google.com/maps/api/js?sensor=true')
                         ->prependFile($this->basePath('assets/plugins/google-maps/markerclusterer.js'))
                         ->prependFile($this->basePath('assets/plugins/fullcalendar/fullcalendar.min.js'))
                         ->prependFile($this->basePath('assets/plugins/fullcalendar/moment.min.js'))
