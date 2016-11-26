@@ -17,8 +17,7 @@ class RegistryController extends AbstractActionController
     public function indexAction()
     {
         $this->layout('layout/login');
-        
-        
+                
         if($this->getRequest()->isPost()){
             
         }
