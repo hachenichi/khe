@@ -31,4 +31,4 @@ public/fonts/*
 public/.htaccess
 public/index.php
 
-/nbproject/private/
+nbproject/*
