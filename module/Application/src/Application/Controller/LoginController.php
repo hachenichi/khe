@@ -29,54 +29,57 @@ class LoginController extends AbstractActionController
 				
 				if($this->getRequest()->getPost('email') && $this->getRequest()->getPost('email') !== '' 
 					&& $this->getRequest()->getPost('password') && $this->getRequest()->getPost('password') !== ''){
+					
+					$email = strtolower($this->getRequest()->getPost('email'));
+					$password = $this->getRequest()->getPost('password');
+					
+					$emailValidator = new \Zend\Validator\EmailAddress();
+					if ($emailValidator->isValid($email)) {//Valida si el email es valido
 						
-						$email = strtolower($this->getRequest()->getPost('email'));
-						$password = $this->getRequest()->getPost('password');
+						$dbquery = $this->getServiceLocator()->get('Application/Model/Dbquery');
+						$userExist = $dbquery->login($email, $password);
 						
-						$emailValidator = new \Zend\Validator\EmailAddress();
-						if ($emailValidator->isValid($email)) {//Valida si el email es valido
+						if($userExist){// Validamos si existe en la DB
 							
-							$dbquery = $this->getServiceLocator()->get('Application/Model/Dbquery');
+							$userSessionAuth->offsetSet('loggedIn', true);
+							$userSessionAuth->offsetSet('dataUser', $userExist);
+							//$userSessionAuth->offsetSet('users_id', $userExist["users_id"]);
+							//$userSessionAuth->offsetSet('users_fullname', $userExist["users_fullname"]);
+							//$userSessionAuth->offsetSet('users_id', $userExist["users_email"]);
+							//return $this->redirect()->toRoute( 'application');
+							return $this->redirect()->toRoute('Dashboard');
 							
-							$userExist = $dbquery->login($email, $password);
-							
-							//Debug::dump($userExist);
-							
-							if($userExist){// Validamos si existe en la DB
-								
-								$userSessionAuth->offsetSet('loggedIn', true);
-								$userSessionAuth->offsetSet('userBasicInfo', $userExist);
-								$userSessionAuth->offsetSet('users_id', $userExist["users_id"]);
-								$userSessionAuth->offsetSet('users_fullname', $userExist["users_fullname"]);
-								$userSessionAuth->offsetSet('users_id', $userExist["users_email"]);
-								
-								return $this->redirect()->toRoute( 'application');
-								
-							}else{
-								
-								$varsToView["error"] = true;
-								$varsToView["vvv"] = "gggg";
-								//echo '<br>usuario no esta en db';
-							}
-							
-							//echo '<br>email valido';
 						}else{
 							
 							$varsToView["error"] = true;
-							$varsToView["vvv"] = "gggg";
-							
-							print_r($varsToView);
-							die("fin");
-							//echo '<br>email invalido';
+							$varsToView["message"] = "Usuario o contraseña incorrecto";
 						}
-					
+						
+					}else{
+						
+						$varsToView["error"] = true;
+						$varsToView["message"] = "email invalido";
+						
 					}
+				}
 			}
-		
+		}else{
+			
+			return $this->redirect()->toRoute('Dashboard');
 		}
-		
-		
-		
-        return new ViewModel();
+        return new ViewModel($varsToView);
     }
+	
+	
+	public function salirAction(){
+		
+		$userSessionAuth = new Container('userSessionAuth');
+		$userSessionAuth->getManager()->getStorage()->clear('userSessionAuth');
+		
+		$userImages = new Container('userImages');
+		$userImages->getManager()->getStorage()->clear('userImages');
+		
+		return $this->redirect()->toRoute('application');
+
+	}
 }
