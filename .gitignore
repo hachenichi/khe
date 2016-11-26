@@ -31,10 +31,8 @@ public/fonts/*
 public/.htaccess
 public/index.php
 
-
 #Ignorar 
 nbproject/*
 .buildpath
 .project
 .settings/*
-
